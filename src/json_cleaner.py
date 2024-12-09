@@ -1,8 +1,10 @@
 import json
+from pathlib import Path
 
 
 def clear_benchmarks() -> dict:
-    with open("../benchmark_results.json", "r") as f:
+    file_path = Path(__file__).parent.parent / 'benchmark_results.json'
+    with open(file_path, "r") as f:
         data = json.load(f)
 
     filtered_benchmarks = []
